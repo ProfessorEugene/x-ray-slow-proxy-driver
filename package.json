@@ -1,0 +1,39 @@
+{
+  "name": "x-ray-slow-proxy-driver",
+  "description": "node-slow-caching-proxy request driver for x-ray",
+  "version": "1.0.0-SNAPSHOT",
+  "license": "MIT",
+  "main": "./driver.js",
+  "author": {
+    "name": "Eugene Rachitskiy",
+    "email": "eugene@rachitskiy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ProfessorEugene/x-ray-slow-proxy-driver.git"
+  },
+  "dependencies": {
+    "node-slow-caching-proxy": "ProfessorEugene/node-slow-caching-proxy#node-slow-caching-proxy-1.0.0",
+    "freeport-async": "ProfessorEugene/freeport-async#93e26e3",
+    "request-x-ray": "^0.1.4"
+  },
+  "devDependencies": {
+    "x-ray": "^2.3.1",
+    "node-release": "pulsepointinc/node-release#node-release-1.0.3",
+    "chai": "3.3.0",
+    "mocha": "3.2.0",
+    "eslint": "3.15.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-jsx-a11y": "3.0.2",
+    "eslint-plugin-react": "6.9.0",
+    "eslint-plugin-import": "2.2.0",
+    "jsdoc": "3.4.3"
+  },
+  "scripts": {
+    "jsdoc": "jsdoc driver.js -d docs/",
+    "lint": "eslint *.js",
+    "test": "eslint *.js && mocha *.test.js",
+    "build": "npm run jsdoc; npm run test",
+    "release": "node node_modules/node-release/Release.js -p `pwd` --build 'npm run build'"
+  }
+}
